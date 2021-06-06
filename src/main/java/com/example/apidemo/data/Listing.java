@@ -1,5 +1,9 @@
 package com.example.apidemo.data;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.UUID;
@@ -7,9 +11,11 @@ import java.util.UUID;
 @Entity
 public class Listing {
     @Id
+    @JsonIgnore
     private UUID id;
     private String city;
     private String postalCode;
+    @Column(name = "price")
     private Integer price;
     private Integer nb_beds;
     private Integer nb_baths;

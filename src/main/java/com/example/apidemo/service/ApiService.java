@@ -3,7 +3,9 @@ package com.example.apidemo.service;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
+import com.example.apidemo.data.ListingBasicDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -32,9 +34,11 @@ public class ApiService {
         repository.save(listing);
     }
 
-    public List<Listing> getAllListings() {
-        List<Listing> listings = new ArrayList<>();
-        repository.findAll().forEach(listings::add);
-        return listings;
+    public List<ListingBasicDetails> getAllListings() {
+        return repository.getAllListings();
+    }
+
+    public Listing getListingInfo(UUID id) {
+            return repository.findById(id).get();
     }
 }

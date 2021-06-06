@@ -1,0 +1,51 @@
+id,city,postalcode,price,nb_beds,nb_baths,owner,rating,description
+288be150-c451-42c8-8f64-61be45237203,Lavaltrie,G7A4X2,177,1,1,Aeriell Pippin,5,1 bed/1 bath renovated condo in a vibrant community of Lavaltrie with a balcony and hardwood floor.
+eae59477-fab2-4db5-a7f8-1d9e23f722d6,Saint-Bruno-de-Montarville,G3T0D1,183,5,3,Bayard Scroggie,3,5 beds/3 baths spacious rental in a quiet neighborhood of Saint-Bruno-de-Montarville with a pool and granite countertop.
+49eaf6af-b8f7-4cb2-ba9e-bdf49e1c27b4,Bromont,G1F1G0,111,1,1,Garvy Alcorn,3,1 bed/1 bath funky rental in a quiet neighborhood of Bromont with a garden and fully furnished game room.
+05cf5662-e302-49a0-b284-1ed359b807e8,Rosemère,G6D2S0,124,1,3,Cicely Knowller,1,1 bed/3 baths cozy condo in a vibrant community of Rosemère with a granite countertop and hardwood floor.
+52a5ed81-f237-4166-9380-8a81defaddff,Saint-Jean-sur-Richelieu,G7C6J2,228,5,2,Griz MacCawley,1,5 beds/2 baths renovated condo in a casual community of Saint-Jean-sur-Richelieu with a beautiful view and walk-in closet.
+6990c7f0-50e1-4ea3-9b92-f96eac42e405,Matane,G7X9S2,76,5,2,Neely Coggan,1,5 beds/2 baths intimate rental in a professional community of Matane with a walk-in closet and granite countertop.
+83b1683a-a0f4-4083-9cba-6af3f0a88bc3,Danville,G6M7C2,166,5,3,Daniella Eschalette,1,5 beds/3 baths beautiful condo in a fun neighborhood of Danville with a walk-in closet and pool.
+d11cdec0-aa2f-444c-888f-9a028f321a0b,Dollard-des-Ormeaux,H6W8Z3,150,5,3,Ede Sooley,4,5 beds/3 baths modern rental in a hip neighborhood of Dollard-des-Ormeaux with a walk-in closet and fully furnished game room.
+8a98eec7-72a7-4e3e-9dfb-6d6cb892ee9a,Kirkland,H5D6X0,60,4,3,Rolland Midghall,2,4 beds/3 baths funky condo in a professional community of Kirkland with a hardwood floor and beautiful view.
+5d1b853b-a3d9-457f-b2bb-bb058e098b95,Léry,G4N7C4,190,2,2,Daisey Spelling,4,2 beds/2 baths spacious condo in a fun neighborhood of Léry with a hardwood floor and granite countertop.
+574b7a93-f865-495e-b6f2-199052df8a7e,Rosemère,H3X0I9,227,2,1,Kath Huntly,4,2 beds/1 bath traditional condo in a professional community of Rosemère with a garden and walk-in closet.
+0eaf54e4-39a3-436b-9108-63ddc438a2a2,Kingsey Falls,H3U8N1,98,1,1,Dell Barczynski,5,1 bed/1 bath spacious rental in a quiet neighborhood of Kingsey Falls with a fully furnished game room and hardwood floor.
+ac55fe3b-0cb3-4acc-8525-be3fdc0e8272,Saint-Constant,H2D8R8,245,2,1,Elva Fernie,3,2 beds/1 bath well-Lit rental in a fun neighborhood of Saint-Constant with a private backyard and hardwood floor.
+5b82820e-0efa-42ef-81b3-cb61bee8c0ca,Amqui,H9M6Q9,129,4,1,Darwin Locksley,5,4 beds/1 bath spacious rental in a fun neighborhood of Amqui with a garden and balcony.
+6d1853d7-ca5e-4bdd-a818-aaf42c2ccb48,Cap-Chat,H2B3I5,165,5,1,Will Belasco,2,5 beds/1 bath cozy condo in a fun neighborhood of Cap-Chat with a private backyard and fully furnished game room.
+b0b5f999-9ed9-4293-b8c2-9e5e1886114e,Thurso,H1C7X9,136,4,1,Nev Gloy,5,4 beds/1 bath traditional rental in a friendly neighborhood of Thurso with a beautiful view and pool.
+f0646f16-e2d4-4d3c-afc2-121af2b91ae5,Sainte-Marguerite-du-Lac-Masson,H8S1P2,105,2,3,Guenna Ayllett,2,2 beds/3 baths warm condo in a casual community of Sainte-Marguerite-du-Lac-Masson with a beautiful view and private backyard.
+73d031a7-1622-4d5e-925f-6522d0cf697c,Normandin,G7B5Y4,235,5,1,Morrie Magenny,3,5 beds/1 bath private rental in a quiet neighborhood of Normandin with a hardwood floor and walk-in closet.
+c6b256d8-5997-4ed3-b7a9-4bb889895ad7,Lebel-sur-Quévillon,H0Y0J3,53,5,3,Ysabel Trude,4,5 beds/3 baths charming condo in a vibrant community of Lebel-sur-Quévillon with a hardwood floor and garden.
+140e284b-7c02-4d24-aef1-c669fbc8d389,Alma,H3T1M4,129,5,2,Diandra Widmore,3,5 beds/2 baths quiet condo in a casual community of Alma with a granite countertop and beautiful view.
+c8c9d551-4bed-4684-9f9b-37495e312713,East Angus,H0R2B7,138,4,3,Griz Colegate,2,4 beds/3 baths well-Lit rental in a vibrant community of East Angus with a garden and granite countertop.
+36fdfd52-3b7a-46a2-9e29-9c89c3d57187,Victoriaville,H3G6W5,125,1,3,Harcourt Bromont,1,1 bed/3 baths beautiful rental in a professional community of Victoriaville with a pool and granite countertop.
+da0b8fc8-b9c6-4173-be62-3e4f4e7a4b1f,Dollard-des-Ormeaux,G8D8A3,208,4,3,Kath Barkley,3,4 beds/3 baths beautiful rental in a quiet neighborhood of Dollard-des-Ormeaux with a walk-in closet and granite countertop.
+6531f61e-5ace-4b8a-ace2-604273fc8e38,Saint-Constant,G9K2Z0,246,5,3,Vi Gogin,3,5 beds/3 baths charming rental in a casual community of Saint-Constant with a private backyard and beautiful view.
+b9fd19a0-5767-49a4-9b3f-3dc1c3a6151e,Lévis,G1L5J0,242,4,1,Johnna Lanfear,2,4 beds/1 bath unique rental in a professional community of Lévis with a granite countertop and beautiful view.
+33035cb6-a569-49e7-af27-a42de209d4a6,Dolbeau-Mistassini,G2B6E3,222,3,2,Barri Dowda,3,3 beds/2 baths quiet rental in a professional community of Dolbeau-Mistassini with a fully furnished game room and beautiful view.
+de800bc6-6a1b-4a7e-8d68-d832524c3a75,Magog,H4H1I2,134,3,3,Genovera Flacke,4,3 beds/3 baths cozy rental in a vibrant community of Magog with a fully furnished game room and hardwood floor.
+47f0d6b2-8ea7-465e-a103-6eabcc3ee36d,Dégelis,G7U1F5,68,5,1,Moshe Trew,4,5 beds/1 bath spacious rental in a fun neighborhood of Dégelis with a private backyard and granite countertop.
+d7a2f7b4-a0c2-4e39-a443-9dd1f8e2821e,Rimouski,G9O3A1,81,1,2,Brigida McCarthy,3,1 bed/2 baths tasteful condo in a hip neighborhood of Rimouski with a beautiful view and walk-in closet.
+1576d6fb-f2ff-4d78-b5a1-73ef2cb7db3a,Pohénégamook,H7X1L4,209,1,2,Johnna Crayton,4,1 bed/2 baths charming rental in a hip neighborhood of Pohénégamook with a pool and private backyard.
+73732491-fed0-4cef-9e29-fd530d83a66e,Granby,H8R1Q0,121,5,1,Gottfried Szymczyk,4,5 beds/1 bath funky condo in a professional community of Granby with a balcony and walk-in closet.
+054a3e81-ac17-4565-8802-03ca1fdf67cf,Saint-Hyacinthe,G8W8K6,153,3,1,Ronnie Stormes,1,3 beds/1 bath charming condo in a fun neighborhood of Saint-Hyacinthe with a balcony and walk-in closet.
+82e8b2ff-4bb4-4d4b-96ef-e39d8619aaa6,L'Ancienne-Lorette,H0W1W9,142,5,3,Caty Alesbrook,5,5 beds/3 baths well-Lit condo in a vibrant community of L'Ancienne-Lorette with a hardwood floor and fully furnished game room.
+c19ec2ec-4548-4693-8d65-eba7220d1193,Saint-Hyacinthe,H1R9P4,128,1,1,Madalyn Beautyman,2,1 bed/1 bath spacious condo in a hip neighborhood of Saint-Hyacinthe with a fully furnished game room and walk-in closet.
+890caf85-83c8-4335-970d-961c49ee69df,Brownsburg-Chatham,H0R1T0,101,3,1,Shirl Suddock,2,3 beds/1 bath private rental in a fun neighborhood of Brownsburg-Chatham with a pool and garden.
+ce981169-546d-4a94-9627-3d2eeedae7ad,Baie-D'Urfé,G7Y5B0,201,3,1,Leese Trude,4,3 beds/1 bath traditional rental in a fun neighborhood of Baie-D'Urfé with a fully furnished game room and hardwood floor.
+bf15a18f-ef6a-401c-8703-6259b73d663d,Dorval,H8Y6S3,90,4,3,Aluino Matyukon,2,4 beds/3 baths private condo in a vibrant community of Dorval with a garden and fully furnished game room.
+d0d3ef1b-0f1d-4e92-881e-8d8fcfd97092,Farnham,H7T9S2,155,3,1,Daniella Midghall,3,3 beds/1 bath warm condo in a friendly neighborhood of Farnham with a fully furnished game room and hardwood floor.
+fbd931aa-b68e-4ffb-bee0-841a16ee98e7,Dolbeau-Mistassini,G3U5F3,158,3,3,Darwin Shawl,5,3 beds/3 baths beautiful condo in a friendly neighborhood of Dolbeau-Mistassini with a granite countertop and pool.
+1d7b6244-6af1-4087-b204-83685dc77f7a,Témiscouata-sur-le-Lac,G0Q9E6,170,2,1,Conway Lockart,2,2 beds/1 bath vintage condo in a fun neighborhood of Témiscouata-sur-le-Lac with a beautiful view and private backyard.
+1e2dc60f-d8d7-4dae-8e2c-ccaa1153cc92,Saint-Pascal,H3R2I8,123,5,1,Ermengarde Ayllett,1,5 beds/1 bath renovated rental in a quiet neighborhood of Saint-Pascal with a private backyard and fully furnished game room.
+4ecbaaae-dcd0-4d57-864f-84783d5386c6,Montréal,H1Y6S0,95,1,2,Maggie Asch,5,1 bed/2 baths private condo in a vibrant community of Montréal with a private backyard and beautiful view.
+1097a4dd-9c36-405d-8d38-ba404fd2ca25,Prévost,G7C0J9,157,5,2,Elva Lockart,5,5 beds/2 baths beautiful rental in a professional community of Prévost with a walk-in closet and balcony.
+61713cce-0297-4777-9e55-190ebcf95484,Schefferville,H8W2D8,156,4,2,Kim Jeremiah,5,4 beds/2 baths unique condo in a friendly neighborhood of Schefferville with a balcony and hardwood floor.
+191618a1-cca5-4cbe-af2c-3c27f10540ff,East Angus,H9E9J1,220,2,3,Genovera Granham,1,2 beds/3 baths funky rental in a vibrant community of East Angus with a hardwood floor and pool.
+8fb965e6-6b77-4b79-8032-d9fadc63d87f,Coaticook,H5K5R8,203,3,3,Leese Tittershill,5,3 beds/3 baths classic condo in a professional community of Coaticook with a garden and balcony.
+b8849b20-9b52-4385-93cb-ea28755fcfff,Victoriaville,H3A4R1,101,4,1,Eugine Trassler,5,4 beds/1 bath cozy rental in a friendly neighborhood of Victoriaville with a garden and balcony.
+3f95c74f-45e5-4d1a-b613-d76225a5defa,Cap-Santé,G8A8H2,187,2,2,Coral Theunissen,2,2 beds/2 baths vintage rental in a hip neighborhood of Cap-Santé with a private backyard and hardwood floor.
+4f8e163f-ce1b-4907-b208-8ebcf76bc73e,Chapais,G0H7F7,245,2,3,Angy Granham,2,2 beds/3 baths vintage condo in a hip neighborhood of Chapais with a fully furnished game room and beautiful view.
+d6110415-bffb-47e5-9361-33888314bee1,Beauceville,G5W9C2,156,3,2,Myer Gotobed,5,3 beds/2 baths cozy rental in a friendly neighborhood of Beauceville with a hardwood floor and beautiful view.

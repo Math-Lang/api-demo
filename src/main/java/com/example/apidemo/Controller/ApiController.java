@@ -1,5 +1,7 @@
 package com.example.apidemo.Controller;
 
+import com.example.apidemo.data.ListingBasicDetails;
+import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +22,8 @@ public class ApiController {
     @Autowired
     ApiService service;
 
-    //This snippet will be used if DB is integrated.
+    /*FIXME: Need to confirm if it is okay for this current API to upload as proper architecture
+             would imply have a read API and a write API*/
     @PostMapping("/upload")
     public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {
         String message = "";
@@ -41,9 +44,9 @@ public class ApiController {
     }
 
     @GetMapping("/rentals")
-    public ResponseEntity<List<Listing>> getAllListings() {
+    public ResponseEntity<List<ListingBasicDetails>> getAllListings() {
         try {
-            List<Listing> listings = service.getAllListings();
+            List<ListingBasicDetails> listings = service.getAllListings();
 
             if(listings.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -55,6 +58,24 @@ public class ApiController {
         }
     }
 
+    @GetMapping(value = "rentals/{id}")
+    public ResponseEntity<Listing> getListingInfo(@PathVariable UUID id) {
+        try {
+            Listing listing = service.getListingInfo(id);
+
+            if(listing == null) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+
+            return new ResponseEntity<>(listing, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
+
+    //This is used for testing purposes
     @GetMapping("/greeting")
 	public List<Listing> hello() {
         UUID test = UUID.randomUUID();

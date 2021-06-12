@@ -49,10 +49,14 @@ Listing is our data model to create listings.
 Projections were implemented in order to sort the information to show. (Basic vs Detailed)
 
 ### ApiController
-Being a demo, the name is very generic and as it implies this is the API's controller.
+Being a demo, the name is very generic and as it implies this is the API's controller. Currently, the controller allows to read **AND** write which is not necessarily ideal, but based
+on the fact that I do not use an external DB, I judged it necessary.
 
 ### Helper
 Helper is used to read a csv and "translate" it into a list of listings that can then be used.
+
+### Service & Service Impl
+The service is an interface containing the methods used in the Controller & said methods and implemented in Service Impl in order to minimize coupling.
 
 ### Tests
 Junit is currently used for unit tests.
@@ -60,7 +64,6 @@ Junit is currently used for unit tests.
 ### TODO
 - Entities are currently exposed. This creates strong coupling. Need to implement DTOs ??.
 - Hide repo CRUD methods (mostly delete). Possible using @override & @RestResource(exporte = false) annotations. Make sure to use them on both delete (GUID id & Listing listing).
-- Possibly create multiple modules to increase readability & reinforce best practices. (need to read on that)
 
 ### Technical Development Journal
 - Basic template was developped using https://bezkoder.com/spring-boot-download-csv-file/ as a reference. This seemed like a perfect template to fulfill the needs of my current API.
@@ -73,3 +76,16 @@ Junit is currently used for unit tests.
   
 - I noticed different requests had different outputs. Therefore, I did a little *R&D* of my own and found out about *Projections* which allowed me to control the output with the use of custom get functions in my repo using *JPQL* queries.
   [Thank you Baeldung !](https://www.baeldung.com/spring-data-rest-projections-excerpts)
+  
+
+- I implemented the use of filters while making sure it was possible to use multiple filters together through the help of optional **PathParams** and claned the ApiService class by separating the class & the implementation to reduce coupling.
+
+
+- I had to create custom queries in my repository. This was due to the fact that i use a projection for my listing and therefore cannot apply a standard JPA query (Repo of Listing, but returning ListingBasicDetails). While this is not as clean as I would've liked. It works and is still clean & readable.
+
+
+- I also opted to remain in a single-module project based on the fact that this is a small project.
+
+
+- As i was moving forward using multiple custom queries in my repository combined with a bunch of *if* statements in my controller and another bunch of *if* statements in my service, I came to conclusion that the more filter I was going to add, the more complex
+  my controller and my service were going to get exponentially. Therefore, I decided to spend some time thinking about a solution. I then opted for a single *while* loop in my service simplifying the implementation of new filters and reducing the code complexity.

@@ -1,11 +1,9 @@
-package com.example.apidemo.Controller;
+package com.example.apidemo.controller;
 
 import com.example.apidemo.data.ListingBasicDetails;
-import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -14,7 +12,10 @@ import com.example.apidemo.helper.csvHelper;
 import com.example.apidemo.message.ResponseMessage;
 import com.example.apidemo.data.Listing;
 
+import javax.websocket.server.PathParam;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -44,13 +45,9 @@ public class ApiController {
     }
 
     @GetMapping("/rentals")
-    public ResponseEntity<List<ListingBasicDetails>> getAllListings() {
+    public ResponseEntity<List<ListingBasicDetails>> getAllListings(@PathParam("min_Price") Optional<Integer> min_Price, @PathParam("max_Price") Optional<Integer> max_Price, @PathParam("nb_beds") Optional<Integer> nb_beds) {
         try {
-            List<ListingBasicDetails> listings = service.getAllListings();
-
-            if(listings.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            }
+                List<ListingBasicDetails> listings = service.getAllListings(min_Price, max_Price, nb_beds);
 
             return new ResponseEntity<>(listings, HttpStatus.OK);
         } catch (Exception e) {
@@ -72,8 +69,6 @@ public class ApiController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-
 
     //This is used for testing purposes
     @GetMapping("/greeting")

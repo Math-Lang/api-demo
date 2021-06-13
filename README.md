@@ -59,11 +59,12 @@ Helper is used to read a csv and "translate" it into a list of listings that can
 The service is an interface containing the methods used in the Controller & said methods and implemented in Service Impl in order to minimize coupling.
 
 ### Tests
-Junit is currently used for unit tests.
+Junit is currently used for unit tests. While this may not be optimal, it allows to test the multiple possible queries.
 
 ### TODO
-- Entities are currently exposed. This creates strong coupling. Need to implement DTOs ??.
-- Hide repo CRUD methods (mostly delete). Possible using @override & @RestResource(exporte = false) annotations. Make sure to use them on both delete (GUID id & Listing listing).
+- Entities are currently exposed. This creates strong coupling. Need to implement DTOs ??. **Would be necessary for the view aspect (if/when front-end is to be implemented**)
+- Hide repo CRUD methods (mostly delete). Possible using @override & @RestResource(exported = false) annotations. Make sure to use them on both delete (GUID id & Listing listing). **This was not currently requested
+  and therefore may be out of scope, but is good to keep in mind**
 
 ### Technical Development Journal
 - Basic template was developped using https://bezkoder.com/spring-boot-download-csv-file/ as a reference. This seemed like a perfect template to fulfill the needs of my current API.
@@ -78,7 +79,7 @@ Junit is currently used for unit tests.
   [Thank you Baeldung !](https://www.baeldung.com/spring-data-rest-projections-excerpts)
   
 
-- I implemented the use of filters while making sure it was possible to use multiple filters together through the help of optional **PathParams** and claned the ApiService class by separating the class & the implementation to reduce coupling.
+- I implemented the use of filters while making sure it was possible to use multiple filters together through the help of optional **PathParams** and cleaned the ApiService class by separating the class & the implementation to reduce coupling.
 
 
 - I had to create custom queries in my repository. This was due to the fact that i use a projection for my listing and therefore cannot apply a standard JPA query (Repo of Listing, but returning ListingBasicDetails). While this is not as clean as I would've liked. It works and is still clean & readable.
@@ -88,5 +89,8 @@ Junit is currently used for unit tests.
 
 
 - As i was moving forward using multiple custom queries in my repository combined with a bunch of *if* statements in my controller and another bunch of *if* statements in my service, I came to conclusion that the more filter I was going to add, the more complex
-  my controller and my service were going to get exponentially. Therefore, I decided to spend some time thinking about a solution. I then opted for a single *while* loop in my service simplifying the implementation of new filters and reducing the code complexity.
-  The risk related to this decision would be if the database was huge. In this specific case, it is not applicable but I would definitely have to work on proper querying if I was to face this issue. I suppose this could also be addressed using pagination.
+  my controller and my service were going to get exponentially. I opted for a single query with multiple optional params with default values which seems to be a standard & good practice. This also allowed me to remove the multiple instances of *if statements* &
+  the need for custom queries.
+  
+
+- While finishing the unit tests, I realized that there may have been some better alternative as my service is not being tested & I feel like tests are not necessarily as solid as they could be, but they test my queries as intended which is the main purpose.

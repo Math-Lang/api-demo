@@ -3,6 +3,7 @@ package com.example.apidemo;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.example.apidemo.data.Listing;
+import com.example.apidemo.data.ListingBasicDetails;
 import com.example.apidemo.repository.ListingRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,6 +12,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
 import java.util.UUID;
 
 @RunWith(SpringRunner.class)
@@ -82,28 +84,93 @@ public class JPAUnitTest {
         assertThat(listing).isEqualTo(listing1);
     }
 
-    /*@Test
-    public void apply_postalcode_filter () {
+    @Test
+    public void apply_postalCode_filter () {
+        Listing listing1 = new Listing(UUID.randomUUID(), "Quebec", "K6D2M0", 180, 1,
+                4, "John Doe", 3, "listing1_desc");
+        entityManager.persist(listing1);
 
+
+        Listing listing2 = new Listing(UUID.randomUUID(), "Levis", "L6S6J9", 220, 2,
+                2, "Luke Skywalker", 3, "listing2_desc");
+        entityManager.persist(listing2);
+
+        List<ListingBasicDetails> listings = repository.getAllListings(0, 100000000, 0, "K_____");
+        assertThat(listings).hasSize(1);
+        assertThat(listings.get(0)).hasFieldOrPropertyWithValue("postalCode", "K6D2M0");
     }
 
     @Test
     public void apply_min_Price_filter () {
+        Listing listing1 = new Listing(UUID.randomUUID(), "Quebec", "K6D2M0", 180, 1,
+                4, "John Doe", 3, "listing1_desc");
+        entityManager.persist(listing1);
 
+
+        Listing listing2 = new Listing(UUID.randomUUID(), "Levis", "L6S6J9", 220, 2,
+                2, "Luke Skywalker", 3, "listing2_desc");
+        entityManager.persist(listing2);
+
+        List<ListingBasicDetails> listings = repository.getAllListings(200, 100000000, 0, "%");
+        assertThat(listings).hasSize(1);
+        assertThat(listings.get(0)).hasFieldOrPropertyWithValue("price", 220);
     }
 
     @Test
     public void apply_max_Price_filter () {
+        Listing listing1 = new Listing(UUID.randomUUID(), "Quebec", "K6D2M0", 180, 1,
+                4, "John Doe", 3, "listing1_desc");
+        entityManager.persist(listing1);
 
+
+        Listing listing2 = new Listing(UUID.randomUUID(), "Levis", "L6S6J9", 220, 2,
+                2, "Luke Skywalker", 3, "listing2_desc");
+        entityManager.persist(listing2);
+
+        List<ListingBasicDetails> listings = repository.getAllListings(0, 200, 0, "%");
+        assertThat(listings).hasSize(1);
+        assertThat(listings.get(0)).hasFieldOrPropertyWithValue("price", 180);
     }
 
     @Test
     public void apply_price_range_filter () {
+        Listing listing1 = new Listing(UUID.randomUUID(), "Quebec", "K6D2M0", 180, 1,
+                4, "John Doe", 3, "listing1_desc");
+        entityManager.persist(listing1);
 
+        Listing listing2 = new Listing(UUID.randomUUID(), "Levis", "L6S6J9", 220, 2,
+                2, "Luke Skywalker", 3, "listing2_desc");
+        entityManager.persist(listing2);
+
+        Listing listing3 = new Listing(UUID.randomUUID(), "Rimouski", "J6D0K6", 300, 3,
+                2, "Darth Maul", 4, "listing3_desc");
+        entityManager.persist(listing3);
+
+
+        List<ListingBasicDetails> listings = repository.getAllListings(160, 250, 0, "%");
+        assertThat(listings).hasSize(2);
+        assertThat(listings.get(0)).hasFieldOrPropertyWithValue("price", 180);
+        assertThat(listings.get(1)).hasFieldOrPropertyWithValue("price", 220);
     }
 
     @Test
     public void apply_price_range_and_postalcode_filters () {
+        Listing listing1 = new Listing(UUID.randomUUID(), "Quebec", "K6D2M0", 180, 1,
+                4, "John Doe", 3, "listing1_desc");
+        entityManager.persist(listing1);
 
-    }*/
+        Listing listing2 = new Listing(UUID.randomUUID(), "Levis", "L6S6J9", 220, 2,
+                2, "Luke Skywalker", 3, "listing2_desc");
+        entityManager.persist(listing2);
+
+        Listing listing3 = new Listing(UUID.randomUUID(), "Rimouski", "J6D0K6", 300, 3,
+                2, "Darth Maul", 4, "listing3_desc");
+        entityManager.persist(listing3);
+
+
+        List<ListingBasicDetails> listings = repository.getAllListings(160, 250, 0, "L6S6J9");
+        assertThat(listings).hasSize(1);
+        assertThat(listings.get(0)).hasFieldOrPropertyWithValue("price", 220);
+        assertThat(listings.get(0)).hasFieldOrPropertyWithValue("postalCode", "L6S6J9");
+    }
 }

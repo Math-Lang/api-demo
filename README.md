@@ -89,3 +89,4 @@ Junit is currently used for unit tests.
 
 - As i was moving forward using multiple custom queries in my repository combined with a bunch of *if* statements in my controller and another bunch of *if* statements in my service, I came to conclusion that the more filter I was going to add, the more complex
   my controller and my service were going to get exponentially. Therefore, I decided to spend some time thinking about a solution. I then opted for a single *while* loop in my service simplifying the implementation of new filters and reducing the code complexity.
+  The risk related to this decision would be if the database was huge. In this specific case, it is not applicable but I would definitely have to work on proper querying if I was to face this issue. I suppose this could also be addressed using pagination.

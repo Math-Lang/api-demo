@@ -23,8 +23,6 @@ public class ApiController {
     @Autowired
     ApiService service;
 
-    /*FIXME: Need to confirm if it is okay for this current API to upload as proper architecture
-             would imply have a read API and a write API*/
     @PostMapping("/upload")
     public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {
         String message = "";
@@ -45,7 +43,7 @@ public class ApiController {
     }
 
     @GetMapping("/rentals")
-    public ResponseEntity<List<ListingBasicDetails>> getAllListings(@PathParam("min_Price") Optional<Integer> min_Price, @PathParam("max_Price") Optional<Integer> max_Price, @PathParam("nb_beds") Optional<Integer> nb_beds) {
+    public ResponseEntity<List<ListingBasicDetails>> getAllListings(@RequestParam(value = "min_Price", defaultValue = "0") Optional<Integer> min_Price, @RequestParam(value = "max_Price", defaultValue = "100000000") Optional<Integer> max_Price, @RequestParam(value = "nb_beds", defaultValue = "0") Optional<Integer> nb_beds) {
         try {
                 List<ListingBasicDetails> listings = service.getAllListings(min_Price, max_Price, nb_beds);
 
@@ -69,23 +67,4 @@ public class ApiController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-    //This is used for testing purposes
-    @GetMapping("/greeting")
-	public List<Listing> hello() {
-        UUID test = UUID.randomUUID();
-		return List.of(
-				new Listing(
-                        test,
-						"Lavaltrie",
-						"G7A4X2",
-						177,
-						1,
-						1,
-						"Aeriell Pippin",
-						5,
-						"1 bed/1 bath renovated condo in a vibrant community of Lavaltrie with a balcony and hardwood floor."
-				)
-		);
-	}
 }

@@ -14,6 +14,6 @@ import java.util.UUID;
 @Repository
 public interface ListingRepository extends JpaRepository<Listing, UUID> {
 
-    @Query("SELECT l FROM Listing l")
-    List<ListingBasicDetails> getAllListings();
+    @Query("SELECT l FROM Listing l WHERE l.price > ?1 and l.price < ?2 and nb_beds > ?3")
+    List<ListingBasicDetails> getAllListings(Integer min_Price, Integer max_Price, Integer nb_beds);
 }

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -37,22 +36,7 @@ public class ApiServiceImpl implements ApiService {
 
     @Override
     public List<ListingBasicDetails> getAllListings(Optional<Integer> min_Price, Optional<Integer> max_Price, Optional<Integer> nb_beds) {
-        List<ListingBasicDetails> listings = repository.getAllListings();
-
-        Iterator<ListingBasicDetails> i = listings.iterator();
-
-        while(i.hasNext()) {
-            ListingBasicDetails nextListing = i.next();
-            if(min_Price.isPresent() && nextListing.getPrice() < min_Price.get()) {
-                i.remove();
-            }
-            else if(max_Price.isPresent() && nextListing.getPrice() > max_Price.get()) {
-                i.remove();
-            }
-            else if(nb_beds.isPresent() && nextListing.getNb_beds() < nb_beds.get()) {
-                i.remove();
-            }
-        }
+        List<ListingBasicDetails> listings = repository.getAllListings(min_Price.get(), max_Price.get(), nb_beds.get());
 
         return listings;
     }

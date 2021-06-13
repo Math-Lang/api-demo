@@ -11,9 +11,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.UUID;
 
-@Getter
-@Setter
 @ToString
+@Setter
+@Getter
 @Entity
 public class Listing {
     @Id

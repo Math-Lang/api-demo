@@ -20,7 +20,7 @@ public interface ApiService {
 
     public void AddListing(Listing listing);
 
-    public List<ListingBasicDetails> getAllListings(Optional<Integer> min_Price, Optional<Integer> max_Price, Optional<Integer> nb_beds) ;
+    public List<ListingBasicDetails> getAllListings(Optional<Integer> min_Price, Optional<Integer> max_Price, Optional<Integer> nb_beds, Optional<String> postalCode) ;
 
     public Listing getListingInfo(UUID id);
 }

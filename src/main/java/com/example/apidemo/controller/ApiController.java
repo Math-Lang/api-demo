@@ -2,6 +2,7 @@ package com.example.apidemo.controller;
 
 import com.example.apidemo.data.ListingBasicDetails;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import com.example.apidemo.helper.csvHelper;
 import com.example.apidemo.message.ResponseMessage;
 import com.example.apidemo.data.Listing;
 
+import javax.swing.text.html.Option;
 import javax.websocket.server.PathParam;
 import java.util.Collections;
 import java.util.List;
@@ -43,9 +45,10 @@ public class ApiController {
     }
 
     @GetMapping("/rentals")
-    public ResponseEntity<List<ListingBasicDetails>> getAllListings(@RequestParam(value = "min_Price", defaultValue = "0") Optional<Integer> min_Price, @RequestParam(value = "max_Price", defaultValue = "100000000") Optional<Integer> max_Price, @RequestParam(value = "nb_beds", defaultValue = "0") Optional<Integer> nb_beds) {
+    public ResponseEntity<List<ListingBasicDetails>> getAllListings(@RequestParam(defaultValue = "0") Optional<Integer> min_Price, @RequestParam(defaultValue = "100000000") Optional<Integer> max_Price,
+                                                                    @RequestParam(defaultValue = "0") Optional<Integer> nb_beds, @RequestParam(defaultValue = "%") Optional<String> postalCode) {
         try {
-                List<ListingBasicDetails> listings = service.getAllListings(min_Price, max_Price, nb_beds);
+            List<ListingBasicDetails> listings = service.getAllListings(min_Price, max_Price, nb_beds, postalCode);
 
             return new ResponseEntity<>(listings, HttpStatus.OK);
         } catch (Exception e) {

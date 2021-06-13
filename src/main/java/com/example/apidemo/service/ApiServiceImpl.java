@@ -35,8 +35,8 @@ public class ApiServiceImpl implements ApiService {
     }
 
     @Override
-    public List<ListingBasicDetails> getAllListings(Optional<Integer> min_Price, Optional<Integer> max_Price, Optional<Integer> nb_beds) {
-        List<ListingBasicDetails> listings = repository.getAllListings(min_Price.get(), max_Price.get(), nb_beds.get());
+    public List<ListingBasicDetails> getAllListings(Optional<Integer> min_Price, Optional<Integer> max_Price, Optional<Integer> nb_beds, Optional<String> postalCode) {
+        List<ListingBasicDetails> listings = repository.getAllListings(min_Price.get(), max_Price.get(), nb_beds.get(), postalCode.get());
 
         return listings;
     }
